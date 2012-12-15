@@ -167,12 +167,21 @@ public class StringLetterSetTest
 	}
 	
 	@Test
-	public void testContainsAllWithInvalidChars()
+	public void testContainsAllWithNumber()
 	{
 		thrown.expect(RuntimeException.class);
 		thrown.expectMessage("ungueltige Zeichen");
 		StringLetterSet letterSet = new StringLetterSet();
-		letterSet.containsAll("5");
+		letterSet.containsAll("42");
+	}
+	
+	@Test
+	public void testContainsAllWithInvalidChar()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("ungueltige Zeichen");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.containsAll("&");
 	}
 	
 	@Test
@@ -202,7 +211,7 @@ public class StringLetterSetTest
 	}
 	
 	@Test
-	public void testContainsSomeWithSomeInvalidChar()
+	public void testContainsSomeWithInvalidChar()
 	{
 		thrown.expect(RuntimeException.class);
 		thrown.expectMessage("ungueltige Zeichen");
