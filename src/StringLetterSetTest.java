@@ -184,11 +184,29 @@ public class StringLetterSetTest
 	}
 	
 	@Test
-	public voic testContainsSomeWithNull()
+	public void testContainsSomeWithNull()
 	{
 		thrown.expect(RuntimeException.class);
 		thrown.expectMessage("null");
 		StringLetterSet letterSet = new StringLetterSet();
 		letterSet.containsSome(null);
+	}
+	
+	@Test
+	public void testContainsSomeWithNumber()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("ungueltige Zeichen");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.containsSome("7");
+	}
+	
+	@Test
+	public void testContainsSomeWithSomeInvalidChar()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("ungueltige Zeichen");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.containsSome("@");
 	}
 }

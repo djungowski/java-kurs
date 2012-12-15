@@ -108,6 +108,7 @@ final public class StringLetterSet implements LetterSet
 	
 	public boolean containsSome(String letters)
 	{
+		this.checkLetters(letters);
 		letters = this.sortAndUnifyLetterSet(letters);
 		final int lettersLength = letters.length();
 		for (int index = 0; index < lettersLength; index++) {
