@@ -122,6 +122,9 @@ final public class StringLetterSet implements LetterSet
 	
 	public LetterSet unite(LetterSet that)
 	{
+		if (that == null) {
+			throw new RuntimeException("that darf nicht null sein");
+		}
 		String unitedLetters = this.toString() + that.toString();
 		unitedLetters = this.sortAndUnifyLetterSet(unitedLetters);
 		StringLetterSet unitedLetterSet = new StringLetterSet(unitedLetters);

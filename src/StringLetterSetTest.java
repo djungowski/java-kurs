@@ -236,4 +236,13 @@ public class StringLetterSetTest
 		assertNotSame(second, expected);
 		assertEquals("ABCDEFXYZ", expected.toString());
 	}
+	
+	@Test
+	public void testUniteWithNull()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("null");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.unite(null);
+	}
 }
