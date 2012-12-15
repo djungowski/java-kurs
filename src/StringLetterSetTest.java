@@ -182,4 +182,13 @@ public class StringLetterSetTest
 		assertTrue(letterSet.containsSome("SIMSALABIM"));
 		assertFalse(letterSet.containsSome("HORST"));
 	}
+	
+	@Test
+	public voic testContainsSomeWithNull()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("null");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.containsSome(null);
+	}
 }
