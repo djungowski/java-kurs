@@ -105,4 +105,17 @@ final public class StringLetterSet implements LetterSet
 		}
 		return true;
 	}
+	
+	public boolean containsSome(String letters)
+	{
+		letters = this.sortAndUnifyLetterSet(letters);
+		final int lettersLength = letters.length();
+		for (int index = 0; index < lettersLength; index++) {
+			final char currentLetter = letters.charAt(index);
+			if (this.letterSet.indexOf(currentLetter) > -1) {
+				return true;
+			}
+		}
+		return false;
+	}
 }

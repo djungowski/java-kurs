@@ -7,4 +7,5 @@ public interface LetterSet
 	public LetterSet remove(String letters);
 	public boolean contains(char letter);
 	public boolean containsAll(String letters);
+	public boolean containsSome(String letters);
 }
