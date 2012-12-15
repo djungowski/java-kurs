@@ -156,4 +156,13 @@ public class StringLetterSetTest
 		assertTrue(letterSet.containsAll("CBAAAA"));
 		assertFalse(letterSet.containsAll("CBZ"));
 	}
+	
+	@Test
+	public void testContainsAllWithNull()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("null");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.containsAll(null);
+	}
 }
