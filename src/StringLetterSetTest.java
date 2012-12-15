@@ -218,4 +218,11 @@ public class StringLetterSetTest
 		StringLetterSet letterSet = new StringLetterSet();
 		letterSet.containsSome("@");
 	}
+	
+	@Test
+	public void testContainsSomeWithEmptyString()
+	{
+		StringLetterSet letterSet = new StringLetterSet("ABC");
+		assertFalse(letterSet.containsSome(""));
+	}
 }
