@@ -165,4 +165,13 @@ public class StringLetterSetTest
 		StringLetterSet letterSet = new StringLetterSet();
 		letterSet.containsAll(null);
 	}
+	
+	@Test
+	public void testContainsAllWithInvalidChars()
+	{
+		thrown.expect(RuntimeException.class);
+		thrown.expectMessage("ungueltige Zeichen");
+		StringLetterSet letterSet = new StringLetterSet();
+		letterSet.containsAll("5");
+	}
 }
