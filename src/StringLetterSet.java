@@ -91,4 +91,17 @@ final public class StringLetterSet implements LetterSet
 		this.checkLetters(String.valueOf(letter));
 		return this.letterSet.contains(String.valueOf(letter));
 	}
+	
+	public boolean containsAll(String letters)
+	{
+		letters = this.sortAndUnifyLetterSet(letters);
+		final int lettersLength = letters.length();
+		for (int index = 0; index < lettersLength; index++) {
+			final char currentLetter = letters.charAt(index);
+			if (this.letterSet.indexOf(currentLetter) == -1) {
+				return false;
+			}
+		}
+		return true;
+	}
 }

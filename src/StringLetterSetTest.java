@@ -152,6 +152,8 @@ public class StringLetterSetTest
 	@Test
 	public void testContainsAll()
 	{
-		
+		StringLetterSet letterSet = new StringLetterSet("ABC");
+		assertTrue(letterSet.containsAll("CBAAAA"));
+		assertFalse(letterSet.containsAll("CBZ"));
 	}
 }
