@@ -1,0 +1,3 @@
+<module name="Checker">
+    <module name="JavadocPackage"/>
+</module>
