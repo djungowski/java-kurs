@@ -119,4 +119,12 @@ final public class StringLetterSet implements LetterSet
 		}
 		return false;
 	}
+	
+	public LetterSet unite(LetterSet that)
+	{
+		String unitedLetters = this.toString() + that.toString();
+		unitedLetters = this.sortAndUnifyLetterSet(unitedLetters);
+		StringLetterSet unitedLetterSet = new StringLetterSet(unitedLetters);
+		return unitedLetterSet;
+	}
 }

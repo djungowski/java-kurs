@@ -8,4 +8,5 @@ public interface LetterSet
 	public boolean contains(char letter);
 	public boolean containsAll(String letters);
 	public boolean containsSome(String letters);
+	public LetterSet unite(LetterSet that);
 }

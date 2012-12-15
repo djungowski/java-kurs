@@ -225,4 +225,15 @@ public class StringLetterSetTest
 		StringLetterSet letterSet = new StringLetterSet("ABC");
 		assertFalse(letterSet.containsSome(""));
 	}
+	
+	@Test
+	public void testUnite()
+	{
+		StringLetterSet first = new StringLetterSet("ABCDEF");
+		StringLetterSet second = new StringLetterSet("BDFXYZ");
+		StringLetterSet expected = (StringLetterSet) first.unite(second);
+		assertNotSame(first, expected);
+		assertNotSame(second, expected);
+		assertEquals("ABCDEFXYZ", expected.toString());
+	}
 }
