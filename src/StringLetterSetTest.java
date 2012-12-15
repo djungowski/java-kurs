@@ -174,4 +174,12 @@ public class StringLetterSetTest
 		StringLetterSet letterSet = new StringLetterSet();
 		letterSet.containsAll("5");
 	}
+	
+	@Test
+	public void testContainsSome()
+	{
+		StringLetterSet letterSet = new StringLetterSet("ABC");
+		assertTrue(letterSet.containsSome("SIMSALABIM"));
+		assertFalse(letterSet.containsSome("HORST"));
+	}
 }
